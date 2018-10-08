@@ -56,6 +56,7 @@ Private Sub m_BillTransfer_UserMenuClick(ByVal Index As Long, ByVal Caption As S
         
         FAuxQty = GetCtlIndexByFld("FAuxQty", True)
         FQty = GetCtlIndexByFld("FQty", True)
+        FSecQty = GetCtlIndexByFld("FSecQty", True)
         
         currentrow = m_BillTransfer.BillForm.get_MaxEntry
 
@@ -69,6 +70,7 @@ Private Sub m_BillTransfer_UserMenuClick(ByVal Index As Long, ByVal Caption As S
             For i = 1 To currentrow
                 m_BillTransfer.SetGridText i, FQty, Val(m_BillTransfer.GetGridText(i, FQty)) * bom_count
                 m_BillTransfer.SetGridText i, FAuxQty, Val(m_BillTransfer.GetGridText(i, FAuxQty)) * bom_count
+                m_BillTransfer.SetGridText i, FSecQty, Val(m_BillTransfer.GetGridText(i, FSecQty)) * bom_count
             Next
         End If
         
